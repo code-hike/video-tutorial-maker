@@ -1,5 +1,6 @@
 import { join } from "path";
 import path from "path";
+import React from "react";
 import matter from "gray-matter";
 import renderToString from "next-mdx-remote/render-to-string";
 import fs from "fs";
@@ -43,6 +44,6 @@ export async function getLessonProps(slug) {
 
   return {
     source: mdxSource,
-    preset: data.preset,
+    presetName: data.preset,
   };
 }

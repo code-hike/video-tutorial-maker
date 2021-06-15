@@ -2,7 +2,7 @@ import React from "react";
 import { MiniEditor } from "@code-hike/mini-editor";
 import { Preview } from "./preview";
 
-export function Lesson({ steps }) {
+export function Lesson({ steps, preset }) {
   const [index, setIndex] = React.useState(0);
 
   const step = steps[index];
@@ -29,6 +29,7 @@ export function Lesson({ steps }) {
         />
         <Preview
           style={{ flex: 1, margin: 8, height: "auto" }}
+          preset={preset}
           preview={step.previewProps}
           codeFiles={step.editorProps.contentProps.files}
         />

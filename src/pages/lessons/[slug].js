@@ -1,6 +1,7 @@
+import React from "react";
 import hydrate from "next-mdx-remote/hydrate";
 import { slugs, getLessonProps } from "../../content";
-import { components } from "../../shortcodes";
+import { components, LessonContext } from "../../shortcodes";
 
 export async function getStaticPaths() {
   return {
@@ -13,14 +14,14 @@ export async function getStaticProps({ params }) {
   return { props: await getLessonProps(params.slug) };
 }
 
-export default function LessonPage({ source, preset }) {
+export default function LessonPage({ source, presetName }) {
   const children = hydrate(source, { components });
   return (
-    <div>
+    <LessonContext.Provider value={{ presetName }}>
       {/* <Head>
         <title>{frontMatter.title}</title>
       </Head> */}
       {children}
-    </div>
+    </LessonContext.Provider>
   );
 }

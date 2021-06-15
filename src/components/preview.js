@@ -6,9 +6,9 @@ import {
 } from "@codesandbox/sandpack-react";
 import s from "./preview.module.css";
 
-const preset = { template: "react" };
+// const preset = { template: "react" };
 
-export function Preview({ style, preview, codeFiles }) {
+export function Preview({ style, preview, preset, codeFiles }) {
   const files = getFiles(codeFiles);
   const { customSetup: setup, ...props } = preset;
   const customSetup = { ...setup, files: { ...setup?.files, ...files } };

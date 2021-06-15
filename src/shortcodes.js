@@ -1,72 +1,26 @@
 import React from "react";
-import { mdxToStep } from "@code-hike/mini-editor";
 import { Lesson } from "./components/lesson";
+import { useStepsFromChildren } from "./mdx-to-steps";
+import { presets } from "./presets/index";
 
 export const components = {
   wrapper: Wrapper,
   StepHead: () => <div />,
 };
 
+export const LessonContext = React.createContext({ presetName: null });
+
 function Wrapper({ children }) {
   const steps = useStepsFromChildren({ children });
-  return <Lesson steps={steps} />;
-}
+  const { presetName } = React.useContext(LessonContext);
 
-function useStepsFromChildren({
-  children,
-  editorProps = {},
-  previewProps = {},
-  preset = {},
-  defaultFileName = "App.js",
-}) {
-  // Assumes a step head like:
-  // <StepHead codeProps={{minColumns: 20}} previewProps={{zoom: 1}} editorFrameProps={{width: 200}} >
-
-  const kids = React.Children.toArray(children);
-  let prevEditorStep = undefined;
-  const steps = [];
-
-  for (let i = 0; i < kids.length; ) {
-    const headKid = kids[i];
-    const contentKids = [];
-    i++;
-    while (i < kids.length && kids[i]?.props?.mdxType !== "StepHead") {
-      contentKids.push(kids[i]);
-      i++;
-    }
-
-    const editorStep = mdxToStep(headKid, prevEditorStep, {
-      defaultFileName,
-    });
-    prevEditorStep = editorStep;
-
-    const headProps = headKid?.props;
-    const stepPreviewProps = headProps?.previewProps;
-    const stepCodeProps = headProps?.codeProps;
-    const stepFrameProps = headProps?.editorFrameProps;
-
-    steps.push({
-      content: React.createElement(React.Fragment, {
-        children: contentKids,
-      }),
-      editorProps: {
-        contentProps: editorStep,
-        codeProps: {
-          ...editorProps?.codeProps,
-          ...stepCodeProps,
-        },
-        frameProps: {
-          ...editorProps?.frameProps,
-          ...stepFrameProps,
-        },
-      },
-      previewPreset: preset,
-      previewProps: {
-        ...previewProps,
-        ...stepPreviewProps,
-      },
-    });
+  const preset = presets[presetName];
+  if (!preset) {
+    return (
+      <div>
+        Error: Missing preset for <code>{presetName}</code>
+      </div>
+    );
   }
-
-  return steps;
+  return <Lesson steps={steps} preset={presets[presetName]} />;
 }
