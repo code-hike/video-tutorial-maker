@@ -1,5 +1,6 @@
-import { mdxToStep, MiniEditor } from "@code-hike/mini-editor";
 import React from "react";
+import { mdxToStep } from "@code-hike/mini-editor";
+import { Lesson } from "./components/lesson";
 
 export const components = {
   wrapper: Wrapper,
@@ -8,20 +9,7 @@ export const components = {
 
 function Wrapper({ children }) {
   const steps = useStepsFromChildren({ children });
-
-  const [index, setIndex] = React.useState(0);
-
-  const step = steps[index];
-  return (
-    <div>
-      <button onClick={() => setIndex(index + 1)}>Next</button>
-      <MiniEditor
-        codeProps={step.codeProps}
-        frameProps={step.frameProps}
-        {...step.editorProps.contentProps}
-      />
-    </div>
-  );
+  return <Lesson steps={steps} />;
 }
 
 function useStepsFromChildren({

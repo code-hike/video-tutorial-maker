@@ -1,0 +1,34 @@
+.preview :global(.sp-preview-iframe) {
+  min-height: unset;
+  height: 100% !important;
+}
+
+.preview :global(.sp-overlay) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0;
+  overflow: auto;
+  height: 100%;
+  z-index: 3;
+}
+
+.preview :global(.sp-loading) {
+  display: none;
+}
+
+.preview :global(.sp-error) {
+  box-sizing: border-box;
+  padding: 16px;
+  white-space: pre-wrap;
+  font-family: "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas,
+    "Liberation Mono", Monaco, "Lucida Console", monospace;
+  background-color: rgb(255, 205, 202);
+}
+
+.preview :global(.sp-error-message) {
+  color: #811e18;
+  font-size: 0.9em;
+}
