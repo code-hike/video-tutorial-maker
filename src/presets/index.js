@@ -15,13 +15,13 @@ export const presets = {
       files: f(require.context("./svelte")),
     },
   },
-  // angular: {
-  //   customSetup: {
-  //     entry: "/index.html",
-  //     environment: "angular-cli",
-  //     files: f(require.context("./angular")),
-  //   },
-  // },
+  lit: {
+    customSetup: {
+      entry: "/index.html",
+      environment: "parcel",
+      files: f(require.context("./lit")),
+    },
+  },
 };
 
 function f(ctx) {
