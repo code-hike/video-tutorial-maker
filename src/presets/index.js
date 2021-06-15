@@ -2,6 +2,9 @@ import "prism-svelte";
 import "prismjs/components/prism-typescript";
 
 export const presets = {
+  html: {
+    template: "html",
+  },
   react: {
     template: "react",
   },

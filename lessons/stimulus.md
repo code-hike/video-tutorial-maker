@@ -1,0 +1,508 @@
+---
+title: "Stimulus in 60 seconds"
+preset: "html"
+---
+
+<StepHead>
+
+```html index.html focus=7:9
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div>
+      <button>Hello Stimulus</button>
+    </div>
+  </body>
+</html>
+```
+
+</StepHead>
+
+To make a piece of HTML interactive
+
+<StepHead>
+
+```html index.html focus=11:19
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div>
+      <button>Hello Stimulus</button>
+    </div>
+  </body>
+  <script>
+    const app = Stimulus.Application.start();
+    app.register(
+      "hello",
+      class extends Stimulus.Controller {
+        // ...
+      }
+    );
+  </script>
+</html>
+```
+
+</StepHead>
+
+you need to create a controller class
+
+<StepHead>
+
+```html index.html focus=7,9,14
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div data-controller="hello">
+      <button>Hello Stimulus</button>
+    </div>
+  </body>
+  <script>
+    const app = Stimulus.Application.start();
+    app.register(
+      "hello",
+      class extends Stimulus.Controller {
+        // ...
+      }
+    );
+  </script>
+</html>
+```
+
+</StepHead>
+
+and link an element to the controller with the data-controller attribute.
+
+<StepHead>
+
+```html index.html focus=8
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div data-controller="hello">
+      <button data-action="click->hello#addGoal">Hello Stimulus</button>
+    </div>
+  </body>
+  <script>
+    const app = Stimulus.Application.start();
+    app.register(
+      "hello",
+      class extends Stimulus.Controller {
+        // ...
+      }
+    );
+  </script>
+</html>
+```
+
+</StepHead>
+
+You can use the data-action attribute for example to handle click events
+
+<StepHead>
+
+```html index.html focus=8[35:47],18:20
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div data-controller="hello">
+      <button data-action="click->hello#addGoal">Hello Stimulus</button>
+    </div>
+  </body>
+  <script>
+    const app = Stimulus.Application.start();
+    app.register(
+      "hello",
+      class extends Stimulus.Controller {
+        addGoal() {
+          console.log("Hello!");
+        }
+      }
+    );
+  </script>
+</html>
+```
+
+</StepHead>
+
+specifying the name of the controller and the method, Stimulus will call that method on every click.
+
+<StepHead>
+
+```html index.html focus=18:23
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div data-controller="hello">
+      <button data-action="click->hello#addGoal">Hello Stimulus</button>
+    </div>
+  </body>
+  <script>
+    const app = Stimulus.Application.start();
+    app.register(
+      "hello",
+      class extends Stimulus.Controller {
+        initialize() {
+          this.goals = 0;
+        }
+        addGoal() {
+          this.goals++;
+        }
+      }
+    );
+  </script>
+</html>
+```
+
+</StepHead>
+
+To add state, you can add a property to the controller
+
+<StepHead>
+
+```html index.html focus=8,10,11,13
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div data-controller="hello">
+      <button data-action="click->hello#addGoal" data-hello-target="button">
+        Hello Stimulus
+      </button>
+    </div>
+  </body>
+  <script>
+    const app = Stimulus.Application.start();
+    app.register(
+      "hello",
+      class extends Stimulus.Controller {
+        initialize() {
+          this.goals = 0;
+        }
+        addGoal() {
+          this.goals++;
+        }
+      }
+    );
+  </script>
+</html>
+```
+
+</StepHead>
+
+To display it, first you need a reference to a DOM element
+
+<StepHead>
+
+```html index.html focus=10,21:23
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div data-controller="hello">
+      <button data-action="click->hello#addGoal" data-hello-target="button">
+        Hello Stimulus
+      </button>
+    </div>
+  </body>
+  <script>
+    const app = Stimulus.Application.start();
+    app.register(
+      "hello",
+      class extends Stimulus.Controller {
+        static get targets() {
+          return ["button"];
+        }
+        initialize() {
+          this.goals = 0;
+        }
+        addGoal() {
+          this.goals++;
+        }
+      }
+    );
+  </script>
+</html>
+```
+
+</StepHead>
+
+Stimulus calls those references targets
+
+<StepHead>
+
+```html index.html focus=21:23,24,26,27,28,30,31
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div data-controller="hello">
+      <button data-action="click->hello#addGoal" data-hello-target="button">
+        Hello Stimulus
+      </button>
+    </div>
+  </body>
+  <script>
+    const app = Stimulus.Application.start();
+    app.register(
+      "hello",
+      class extends Stimulus.Controller {
+        static get targets() {
+          return ["button"];
+        }
+        initialize() {
+          this.goals = 0;
+          this.buttonTarget.textContent = this.goals + " goals";
+        }
+        addGoal() {
+          this.goals++;
+          this.buttonTarget.textContent = this.goals + " goals";
+        }
+      }
+    );
+  </script>
+</html>
+```
+
+</StepHead>
+
+After you define the target, you can access the dom element as a controller property
+
+<StepHead>
+
+```html index.html focus=8:13,21:31
+
+```
+
+</StepHead>
+
+Now, every time the state changes Stimulus re-renders the component. (show)
+
+<StepHead>
+
+```html index.html focus=7:14
+
+```
+
+</StepHead>
+
+To have two of these buttons
+
+<StepHead>
+
+```html index.html focus=7:23
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div data-controller="hello">
+      <button data-action="click->hello#addGoal" data-hello-target="button">
+        Hello Stimulus
+      </button>
+    </div>
+    <div data-controller="hello">
+      <button data-action="click->hello#addGoal" data-hello-target="button">
+        Hello Stimulus
+      </button>
+      <span></span>
+    </div>
+  </body>
+  <script>
+    const app = Stimulus.Application.start();
+    app.register(
+      "hello",
+      class extends Stimulus.Controller {
+        static get targets() {
+          return ["button"];
+        }
+        initialize() {
+          this.goals = 0;
+          this.buttonTarget.textContent = this.goals + " goals";
+        }
+        addGoal() {
+          this.goals++;
+          this.buttonTarget.textContent = this.goals + " goals";
+        }
+      }
+    );
+  </script>
+</html>
+```
+
+</StepHead>
+
+You can duplicate the html, and reuse the controller
+
+<StepHead>
+
+```html index.html focus=7[34:62],15[34:64]
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div data-controller="hello" data-hello-name-value="Messi">
+      <button data-action="click->hello#addGoal" data-hello-target="button">
+        Hello Stimulus
+      </button>
+    </div>
+    <div data-controller="hello" data-hello-name-value="Ronaldo">
+      <button data-action="click->hello#addGoal" data-hello-target="button">
+        Hello Stimulus
+      </button>
+      <span></span>
+    </div>
+  </body>
+  <script>
+    const app = Stimulus.Application.start();
+    app.register(
+      "hello",
+      class extends Stimulus.Controller {
+        static get targets() {
+          return ["button"];
+        }
+        initialize() {
+          this.goals = 0;
+          this.buttonTarget.textContent = this.goals + " goals";
+        }
+        addGoal() {
+          this.goals++;
+          this.buttonTarget.textContent = this.goals + " goals";
+        }
+      }
+    );
+  </script>
+</html>
+```
+
+</StepHead>
+
+Then if you add an attribute
+
+<StepHead>
+
+```html index.html focus=15[34:64],30:32
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div data-controller="hello" data-hello-name-value="Messi">
+      <button data-action="click->hello#addGoal" data-hello-target="button">
+        Hello Stimulus
+      </button>
+    </div>
+    <div data-controller="hello" data-hello-name-value="Ronaldo">
+      <button data-action="click->hello#addGoal" data-hello-target="button">
+        Hello Stimulus
+      </button>
+      <span></span>
+    </div>
+  </body>
+  <script>
+    const app = Stimulus.Application.start();
+    app.register(
+      "hello",
+      class extends Stimulus.Controller {
+        static get values() {
+          return { name: String };
+        }
+        static get targets() {
+          return ["button"];
+        }
+        initialize() {
+          this.goals = 0;
+          this.buttonTarget.textContent = this.goals + " goals";
+        }
+        addGoal() {
+          this.goals++;
+          this.buttonTarget.textContent = this.goals + " goals";
+        }
+      }
+    );
+  </script>
+</html>
+```
+
+</StepHead>
+
+and declare it as a value in the controller
+
+<StepHead>
+
+```html index.html focus=30:32,36,38:41,43:45
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  </head>
+  <body>
+    <div data-controller="hello" data-hello-name-value="Messi">
+      <button data-action="click->hello#addGoal" data-hello-target="button">
+        Hello Stimulus
+      </button>
+    </div>
+    <div data-controller="hello" data-hello-name-value="Ronaldo">
+      <button data-action="click->hello#addGoal" data-hello-target="button">
+        Hello Stimulus
+      </button>
+      <span></span>
+    </div>
+  </body>
+  <script>
+    const app = Stimulus.Application.start();
+    app.register(
+      "hello",
+      class extends Stimulus.Controller {
+        static get values() {
+          return { name: String };
+        }
+        static get targets() {
+          return ["button"];
+        }
+        initialize() {
+          this.goals = 0;
+          this.buttonTarget.textContent =
+            this.nameValue + ": " + this.goals + " goals";
+        }
+        addGoal() {
+          this.goals++;
+          this.buttonTarget.textContent =
+            this.nameValue + ": " + this.goals + " goals";
+        }
+      }
+    );
+  </script>
+</html>
+```
+
+</StepHead>
+
+you can access it as a controller property, similar to targets.

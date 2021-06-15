@@ -10,15 +10,26 @@ import s from "./preview.module.css";
 
 export function Preview({ style, preview, preset, codeFiles }) {
   const files = getFiles(codeFiles);
+
   const { customSetup: setup, ...props } = preset;
   const customSetup = { ...setup, files: { ...setup?.files, ...files } };
 
-  return (
+  return props.template === "html" ? (
+    <HtmlPreview style={style} files={files} />
+  ) : (
     <div className={s.preview} style={style}>
       <SandpackProvider {...props} customSetup={customSetup}>
         <InnerPreview style={{ height: "100%" }} />
       </SandpackProvider>
     </div>
+  );
+}
+
+function HtmlPreview({ style, files }) {
+  return (
+    <MiniBrowser style={style}>
+      <iframe srcDoc={files["/index.html"].code} />
+    </MiniBrowser>
   );
 }
 
