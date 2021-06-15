@@ -45,5 +45,6 @@ export async function getLessonProps(slug) {
   return {
     source: mdxSource,
     presetName: data.preset,
+    title: data.title,
   };
 }
