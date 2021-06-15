@@ -3,7 +3,7 @@ title: "Stimulus in 60 seconds"
 preset: "html"
 ---
 
-<StepHead>
+<StepHead previewProps={{zoom: 2}} >
 
 ```html index.html focus=7:9
 <html>
