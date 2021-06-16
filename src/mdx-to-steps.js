@@ -4,7 +4,7 @@ import { mdxToStep } from "@code-hike/mini-editor";
 export function useStepsFromChildren({
   children,
   editorProps = {},
-  previewProps = {},
+  previewProps = { zoom: 1.4 },
   preset = {},
   defaultFileName = "App.js",
 }) {
