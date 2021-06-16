@@ -1,0 +1,19 @@
+.controls {
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.controls button {
+  height: 2em;
+  padding: 0 1em;
+  font-size: 1.1em;
+  margin-top: 0.8em;
+}
+
+.controls .text {
+  flex: 1;
+  text-align: center;
+  margin: 0 10px;
+  font-size: 1.2em;
+}
