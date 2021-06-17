@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import hydrate from "next-mdx-remote/hydrate";
+import { MDXRemote } from "next-mdx-remote";
 import { slugs, getLessonProps } from "../../content";
 import { components, LessonContext } from "../../shortcodes";
 
@@ -16,14 +16,12 @@ export async function getStaticProps({ params }) {
 }
 
 export default function LessonPage({ source, presetName, title }) {
-  const children = hydrate(source, { components });
   return (
     <LessonContext.Provider value={{ presetName }}>
       <Head>
         <title>{title}</title>
       </Head>
-
-      {children}
+      <MDXRemote {...source} components={components} />
     </LessonContext.Provider>
   );
 }

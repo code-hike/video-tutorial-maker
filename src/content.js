@@ -2,7 +2,7 @@ import { join } from "path";
 import path from "path";
 import React from "react";
 import matter from "gray-matter";
-import renderToString from "next-mdx-remote/render-to-string";
+import { serialize } from "next-mdx-remote/serialize";
 import fs from "fs";
 import { components } from "./shortcodes";
 
@@ -33,13 +33,8 @@ export async function getLessonProps(slug) {
 
   const { content, data } = matter(source);
 
-  const mdxSource = await renderToString(content, {
+  const mdxSource = await serialize(content, {
     components,
-    mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: [],
-    },
-    scope: data,
   });
 
   return {
