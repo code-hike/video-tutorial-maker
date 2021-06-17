@@ -29,6 +29,5 @@ function f(ctx) {
   ctx.keys().forEach((key) => {
     files[key.slice(1)] = ctx(key);
   });
-  console.log(files);
   return files;
 }

@@ -15,6 +15,7 @@ function Wrapper({ children }) {
   const { presetName } = React.useContext(LessonContext);
 
   const preset = presets[presetName];
+
   if (!preset) {
     return (
       <div>
