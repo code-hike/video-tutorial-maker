@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "next"
+    "dev": "next-remote-watch ./lessons"
   },
   "dependencies": {
     "@code-hike/mini-browser": "0.3.0--canary.67.059c384.0",
@@ -9,6 +9,7 @@
     "gray-matter": "^4.0.3",
     "next": "^10.2.3",
     "next-mdx-remote": "^3",
+    "next-remote-watch": "^1.0.0",
     "prism-svelte": "^0.4.7",
     "prism-themes": "^1.7.0",
     "react": "^17.0.2",
