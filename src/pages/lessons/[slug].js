@@ -1,8 +1,7 @@
 import React from "react";
 import Head from "next/head";
-import { MDXRemote } from "next-mdx-remote";
 import { slugs, getLessonProps } from "../../content";
-import { components, LessonContext } from "../../shortcodes";
+import { LessonMDX } from "../../mdx-components";
 
 export async function getStaticPaths() {
   return {
@@ -15,13 +14,13 @@ export async function getStaticProps({ params }) {
   return { props: await getLessonProps(params.slug) };
 }
 
-export default function LessonPage({ source, presetName, title }) {
+export default function LessonPage({ title, ...props }) {
   return (
-    <LessonContext.Provider value={{ presetName }}>
+    <>
       <Head>
         <title>{title}</title>
       </Head>
-      <MDXRemote {...source} components={components} />
-    </LessonContext.Provider>
+      <LessonMDX {...props} />
+    </>
   );
 }

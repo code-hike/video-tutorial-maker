@@ -1,14 +1,13 @@
 import { join } from "path";
 import path from "path";
-import React from "react";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import fs from "fs";
-import { components } from "./shortcodes";
+import { components } from "./mdx-components";
 
-export const LESSONS_PATH = path.join(process.cwd(), "lessons");
-export const lessonsPaths = fs
-  .readdirSync(LESSONS_PATH)
+const lessonsPath = path.join(process.cwd(), "lessons");
+const lessonsPaths = fs
+  .readdirSync(lessonsPath)
   .filter((path) => /\.md$/.test(path));
 
 export const slugs = lessonsPaths.map((path) => path.replace(/\.mdx?$/, ""));
@@ -16,7 +15,7 @@ export const slugs = lessonsPaths.map((path) => path.replace(/\.mdx?$/, ""));
 export function getAllLessons() {
   return lessonsPaths.map((lessonPath) => {
     const slug = lessonPath.replace(/\.md$/, "");
-    const fullPath = join(LESSONS_PATH, lessonPath);
+    const fullPath = join(lessonsPath, lessonPath);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data } = matter(fileContents);
 
@@ -28,7 +27,7 @@ export function getAllLessons() {
 }
 
 export async function getLessonProps(slug) {
-  const lessonFilePath = path.join(LESSONS_PATH, `${slug}.md`);
+  const lessonFilePath = path.join(lessonsPath, `${slug}.md`);
   const source = fs.readFileSync(lessonFilePath);
 
   const { content, data } = matter(source);
