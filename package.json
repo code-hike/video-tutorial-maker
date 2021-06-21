@@ -7,7 +7,7 @@
     "@code-hike/mini-editor": "0.3.0--canary.67.8191339.0",
     "@codesandbox/sandpack-react": "^0.0.6",
     "gray-matter": "^4.0.3",
-    "next": "^10.2.3",
+    "next": "^11.0.0",
     "next-mdx-remote": "^3",
     "next-remote-watch": "^1.0.0",
     "prism-svelte": "^0.4.7",
