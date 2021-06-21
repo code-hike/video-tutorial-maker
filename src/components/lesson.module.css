@@ -17,3 +17,18 @@
   margin: 0 10px;
   font-size: 1.2em;
 }
+
+.column {
+  --width: min(1280px, 100vw);
+  margin: 0 auto;
+  width: var(--width);
+}
+
+.column main {
+  width: var(--width);
+  height: calc(var(--width) * 1080 / 1920);
+  outline: 4px dashed #f22b;
+  background-color: #9eb2d8;
+  display: flex;
+  padding: 8px;
+}
