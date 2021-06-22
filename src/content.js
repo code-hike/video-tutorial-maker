@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import fs from "fs";
 import { components } from "./mdx-components";
+import { getPreset } from "../presets";
 
 const lessonsPath = path.join(process.cwd(), "lessons");
 const lessonsPaths = fs
@@ -32,13 +33,15 @@ export async function getLessonProps(slug) {
 
   const { content, data } = matter(source);
 
+  const preset = getPreset(data.preset);
+
   const mdxSource = await serialize(content, {
     components,
   });
 
   return {
     source: mdxSource,
-    presetName: data.preset,
     title: data.title,
+    preset,
   };
 }

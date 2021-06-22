@@ -2,7 +2,6 @@ import { MDXRemote } from "next-mdx-remote";
 import React from "react";
 import { Lesson } from "./components/lesson";
 import { useStepsFromChildren } from "./mdx-to-steps";
-import { presets } from "./presets/index";
 
 export const components = {
   wrapper: Wrapper,
@@ -13,23 +12,17 @@ export const LessonContext = React.createContext({ presetName: null });
 
 function Wrapper({ children }) {
   const steps = useStepsFromChildren({ children });
-  const { presetName } = React.useContext(LessonContext);
-
-  const preset = presets[presetName];
+  const { preset } = React.useContext(LessonContext);
 
   if (!preset) {
-    return (
-      <div>
-        Error: Missing preset for <code>{presetName}</code>
-      </div>
-    );
+    return <div>Error: Missing preset</div>;
   }
-  return <Lesson steps={steps} preset={presets[presetName]} />;
+  return <Lesson steps={steps} preset={preset} />;
 }
 
-export function LessonMDX({ source, presetName }) {
+export function LessonMDX({ source, preset }) {
   return (
-    <LessonContext.Provider value={{ presetName }}>
+    <LessonContext.Provider value={{ preset }}>
       <MDXRemote {...source} components={components} />
     </LessonContext.Provider>
   );
