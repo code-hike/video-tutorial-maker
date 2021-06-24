@@ -23,6 +23,13 @@ export function getPreset(name) {
           files: getFiles(name),
         },
       };
+    case "vue-pose":
+      return {
+        customSetup: {
+          environment: "vue-cli",
+          files: getFiles(name),
+        },
+      };
     default:
       return {
         template: "react",
