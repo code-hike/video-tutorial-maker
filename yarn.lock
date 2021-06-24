@@ -245,63 +245,63 @@
     "@babel/helper-validator-identifier" "^7.14.5"
     to-fast-properties "^2.0.0"
 
-"@code-hike/classer@0.3.0--canary.67.8191339.0":
-  version "0.3.0--canary.67.8191339.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/classer/-/classer-0.3.0--canary.67.8191339.0.tgz#512fd13d268a40bcb554bd9eaff65d7da3c24569"
-  integrity sha512-RCPJRKIkzbvSVLRhcfqc5X2hIWKAileknCe/O9zw8dS8PbNZ++DMoZfQUQlGphi5wDvY7lim85FIrLwL8lxNSg==
+"@code-hike/classer@0.3.0--canary.67.b6f3cda.0":
+  version "0.3.0--canary.67.b6f3cda.0"
+  resolved "https://registry.yarnpkg.com/@code-hike/classer/-/classer-0.3.0--canary.67.b6f3cda.0.tgz#7b1949e8b4b3dadc33a1d7ed41d0ce8fc29a0896"
+  integrity sha512-1dwdMQCZ+4CPWd7LBvJywHW8McTji+uq67JdmiQRncrrDsIAKRm8ZySRiOKrgHVp4zHxnxKjqy2PVGFUIagbYA==
 
 "@code-hike/classer@^0.0.0-aa6efee":
   version "0.0.0-e48fa74"
   resolved "https://registry.yarnpkg.com/@code-hike/classer/-/classer-0.0.0-e48fa74.tgz#17243ca84d5af303c51e62b378e8db65e01cd3f4"
   integrity sha512-CyPYvfl4K5Hp9uyhLhUemul56eiGOF0FNXh5ALzzK9VNhRmRmj1O0mKtLDpoccI8W90r9kQES/nW2FC8jVVieg==
 
-"@code-hike/code-diff@0.3.0--canary.67.8191339.0":
-  version "0.3.0--canary.67.8191339.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/code-diff/-/code-diff-0.3.0--canary.67.8191339.0.tgz#2842882a5bd86dd15d2c4c3ffa7317af1245efcf"
-  integrity sha512-DXQ30fVfyJ+r98cL8oFS8mmh7JNxH2aF+Pf1DsNO6WRqFiQ9bU+Tx1JV14reUVU3rmi267ByZL+fb2ap9AwO3Q==
+"@code-hike/code-diff@0.3.0--canary.67.b6f3cda.0":
+  version "0.3.0--canary.67.b6f3cda.0"
+  resolved "https://registry.yarnpkg.com/@code-hike/code-diff/-/code-diff-0.3.0--canary.67.b6f3cda.0.tgz#e5d688a2a73ad5d66a8d445acac7541a310ea06a"
+  integrity sha512-jHby594hMBPGGl4wv9NhJDW2odsU09qcO7gwTXn4yzNir1C5cjlFY7x4Pm/tjwotYSeXGJrsXk6dS0iIxNmoew==
   dependencies:
     diff "^4.0.2"
     prismjs "^1.22.0"
 
-"@code-hike/mini-browser@0.3.0--canary.67.8191339.0":
-  version "0.3.0--canary.67.8191339.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/mini-browser/-/mini-browser-0.3.0--canary.67.8191339.0.tgz#faa3a64e29c51c38a0094c1e8a09d15279fa1808"
-  integrity sha512-7dLSHEEd9k36UhOP/yLAUHATgMrlo+sHws2rXzuAfwdQMW13WrDbSLSkEae714c0WpY8JQwpPrOhtYASq1f8LA==
+"@code-hike/mini-browser@0.3.0--canary.67.b6f3cda.0":
+  version "0.3.0--canary.67.b6f3cda.0"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-browser/-/mini-browser-0.3.0--canary.67.b6f3cda.0.tgz#dae764201e9e021f511eb2d8a15c84088d80c15d"
+  integrity sha512-2AJH/9u6MN5Ty+3q326VqvK5blCxlIQpE6lceGFO7D+qg9YbaqsxorgBT9ulvVUzl6cCTTFQMxdGy4v4V602wA==
   dependencies:
-    "@code-hike/classer" "0.3.0--canary.67.8191339.0"
-    "@code-hike/mini-frame" "0.3.0--canary.67.8191339.0"
+    "@code-hike/classer" "0.3.0--canary.67.b6f3cda.0"
+    "@code-hike/mini-frame" "0.3.0--canary.67.b6f3cda.0"
     use-spring "^0.2.3"
 
-"@code-hike/mini-editor@0.3.0--canary.67.8191339.0":
-  version "0.3.0--canary.67.8191339.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/mini-editor/-/mini-editor-0.3.0--canary.67.8191339.0.tgz#1397418f3f052187a78dffa963ee3a9aa68fe218"
-  integrity sha512-Rc0bgE0yWUjL1OlDJ7lsNkzHhW2fduV4GmWp+QMDgeQc0ZsIoqcenjJoI5GRix2mzwI8CcS8LIghi4m72Vc2eg==
+"@code-hike/mini-editor@0.3.0--canary.67.b6f3cda.0":
+  version "0.3.0--canary.67.b6f3cda.0"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-editor/-/mini-editor-0.3.0--canary.67.b6f3cda.0.tgz#7a5fb9cbaef025ccc22b8bb1a388e301e4f78260"
+  integrity sha512-bJZ/scWOj+wyLJ5OHDdutOQizWe/Y/z7owCcHpETtTpmVRIKblMlrvCTiGgoH7C3+K+2yrrd8ahVAurOvvrgDQ==
   dependencies:
-    "@code-hike/classer" "0.3.0--canary.67.8191339.0"
-    "@code-hike/code-diff" "0.3.0--canary.67.8191339.0"
-    "@code-hike/mini-frame" "0.3.0--canary.67.8191339.0"
-    "@code-hike/mini-terminal" "0.3.0--canary.67.8191339.0"
-    "@code-hike/smooth-lines" "0.3.0--canary.67.8191339.0"
+    "@code-hike/classer" "0.3.0--canary.67.b6f3cda.0"
+    "@code-hike/code-diff" "0.3.0--canary.67.b6f3cda.0"
+    "@code-hike/mini-frame" "0.3.0--canary.67.b6f3cda.0"
+    "@code-hike/mini-terminal" "0.3.0--canary.67.b6f3cda.0"
+    "@code-hike/smooth-lines" "0.3.0--canary.67.b6f3cda.0"
     use-spring "^0.2.3"
 
-"@code-hike/mini-frame@0.3.0--canary.67.8191339.0":
-  version "0.3.0--canary.67.8191339.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/mini-frame/-/mini-frame-0.3.0--canary.67.8191339.0.tgz#db69b7cd72d72804ba1e85750f5b14b70f6d6a06"
-  integrity sha512-/EMPH7qrogSW8s5haruqKqp/x+Txwgr0/h80SugHGQwCo4U2/2fvRzBC+M6M4tkO0feaZx911KelPa5p6spK+w==
+"@code-hike/mini-frame@0.3.0--canary.67.b6f3cda.0":
+  version "0.3.0--canary.67.b6f3cda.0"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-frame/-/mini-frame-0.3.0--canary.67.b6f3cda.0.tgz#238593bdd92ffb4dcce141af7962387b5ba31e1e"
+  integrity sha512-ExLFt/cnl7KP7UNEURVZ1HBO+1DKWievwIw4kdCGJp34GNf6eH9gsMutsEJe+qmdlw/nzXBWGo85DQWwaMO0Kg==
   dependencies:
-    "@code-hike/classer" "0.3.0--canary.67.8191339.0"
+    "@code-hike/classer" "0.3.0--canary.67.b6f3cda.0"
 
-"@code-hike/mini-terminal@0.3.0--canary.67.8191339.0":
-  version "0.3.0--canary.67.8191339.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/mini-terminal/-/mini-terminal-0.3.0--canary.67.8191339.0.tgz#368396a8d1d3b62bb70d0b772786b1f4663b59b6"
-  integrity sha512-B5c0GwRBSlVmZd1pTohHb4EC2KZIxZb1xfVt2qGxFb2EZvlG4SEi+5smNYwv+YVlMHQApVNIywzgbf4JmPWPdQ==
+"@code-hike/mini-terminal@0.3.0--canary.67.b6f3cda.0":
+  version "0.3.0--canary.67.b6f3cda.0"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-terminal/-/mini-terminal-0.3.0--canary.67.b6f3cda.0.tgz#ee54596837b6ceb15e4161026cdc1fda316c7fe1"
+  integrity sha512-kepF8vTT1jItLn7AATeri5Kuaf4HcyS1VsSZKzSYjPUg5ykq1zYIi8Y4m0SPxvhIEtjOqKEZqSI0p6OcV4LTHg==
   dependencies:
-    "@code-hike/mini-frame" "0.3.0--canary.67.8191339.0"
+    "@code-hike/mini-frame" "0.3.0--canary.67.b6f3cda.0"
 
-"@code-hike/smooth-lines@0.3.0--canary.67.8191339.0":
-  version "0.3.0--canary.67.8191339.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/smooth-lines/-/smooth-lines-0.3.0--canary.67.8191339.0.tgz#8bcdd9e1918479c770be2f5cc3a119eb96fb36fc"
-  integrity sha512-zCn1eqvA4otk7kOEgnFtuPcJ1l2YbUrL3+BzGQc0/beDcT2jkcaRuMIMWOwiG8FYk+OrF5IbWU7vz2vnT3dWAw==
+"@code-hike/smooth-lines@0.3.0--canary.67.b6f3cda.0":
+  version "0.3.0--canary.67.b6f3cda.0"
+  resolved "https://registry.yarnpkg.com/@code-hike/smooth-lines/-/smooth-lines-0.3.0--canary.67.b6f3cda.0.tgz#8d96feae2443952eb4d8526dfd2a8041c7a09dfc"
+  integrity sha512-nu2bN9EMGdKumh2iPQPhQlQRQCvaFQz8JjqpV4BGYUeDiHLtsh2NNZ9itgMw1vDl4MK+GT0PHczmkJxfAk2YYg==
 
 "@codemirror/autocomplete@^0.18.0":
   version "0.18.7"

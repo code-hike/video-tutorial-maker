@@ -1,10 +1,12 @@
 {
   "scripts": {
-    "dev": "next-remote-watch ./lessons"
+    "dev": "next-remote-watch ./lessons",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "@code-hike/mini-browser": "0.3.0--canary.67.8191339.0",
-    "@code-hike/mini-editor": "0.3.0--canary.67.8191339.0",
+    "@code-hike/mini-browser": "0.3.0--canary.67.b6f3cda.0",
+    "@code-hike/mini-editor": "0.3.0--canary.67.b6f3cda.0",
     "@codesandbox/sandpack-react": "^0.0.6",
     "glob": "^7.1.7",
     "gray-matter": "^4.0.3",
