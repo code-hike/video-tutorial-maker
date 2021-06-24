@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "next-remote-watch ./lessons",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && next export"
   },
   "dependencies": {
     "@code-hike/mini-browser": "0.3.0--canary.67.b6f3cda.0",
