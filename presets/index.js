@@ -15,21 +15,14 @@ export function getPreset(name) {
           files: getFiles(name),
         },
       };
-    case "lit":
-      return {
-        customSetup: {
-          entry: "/index.html",
-          environment: "parcel",
-          files: getFiles(name),
-        },
-      };
-    case "vue-pose":
+    case "vue-pose": {
       return {
         customSetup: {
           environment: "vue-cli",
           files: getFiles(name),
         },
       };
+    }
     default:
       return {
         template: "react",
