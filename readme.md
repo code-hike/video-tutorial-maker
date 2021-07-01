@@ -6,7 +6,7 @@ Clone it with:
 yarn create next-app -e https://github.com/code-hike/video-tutorial-maker
 ```
 
-Learn how to create your lessons with [this video](https://www.youtube.com/watch?v=EYyw4oyAJgY).
+### Learn how to create your lessons with [this video](https://www.youtube.com/watch?v=EYyw4oyAJgY).
 
 > This app doesn't record your screen or audio, you'll need to use a separate software for that.
 
