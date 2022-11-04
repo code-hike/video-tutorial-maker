@@ -8,7 +8,7 @@
   "dependencies": {
     "@code-hike/mini-browser": "0.3.0--canary.67.b6f3cda.0",
     "@code-hike/mini-editor": "0.3.0--canary.67.b6f3cda.0",
-    "@codesandbox/sandpack-react": "^0.0.6",
+    "@codesandbox/sandpack-react": "0.9.11",
     "glob": "^7.1.7",
     "gray-matter": "^4.0.3",
     "next": "12.3.2",
